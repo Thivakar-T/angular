@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="container">
+		<div class="row logoutrow">
+			<h1 class="text-left font-italic font-weight-bolder mt-4 ml-3"><u>Is School</u></h1>
+		   <ul class="ml-auto mt-5">
+				   <li><a [routerLink]="['/dashboard']" class=" font-weight-bolder mt-5">Home /</a></li>
+                   <li><a [routerLink]="['/login']" class="font-weight-bolder mt-5">Logout</a></li>     
+			</ul>
+		</div>
+	</div><hr>
+
+<div class="container">
+	 <div class="row">
+	 	<div class="col-6 ml-5 mt-5">
+	 	   <h3 class="ml-5"><u>Students List</u></h3>
+	 	</div>
+	 	 <div class="col-6 text-right ml-auto mr-5">
+           <a [routerLink]="['/student']"><button type="button" class="btn btn-primary mr-5 font-weight-bold">Create Student</button></a>
+        </div>
+	 </div>
+ 
+   <table class="table table-bordered text-dark text-center mt-3">
+      <thead>
+        <tr id="trId_head">
+          <th>Roll No</th>
+          <th>User Name</th>
+          <th>Standard</th>
+          <th>DOB</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let rows of studentArr">
+           <td>{{rows.rollNo}}</td>
+           <td>{{rows.userName}}</td>
+           <td>{{rows.standard}}</td>
+           <td>{{rows.dateOfBirth}}</td>
+           <td> <button class="btn btn-primary" routerLink = '/student/{{rows.id}}'>Edit</button></td>
+            <td><button class="btn btn-dark" (click) = "get(rows.id)">Delete</button></td>
+         </tr>
+ 
+       </tbody>
+    </table>
+ </div>
+	
+</div>

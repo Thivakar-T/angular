@@ -1,0 +1,45 @@
+    
+<div class="container-fluid">
+	<div class="container">
+		<div class="row logoutrow">
+			<h1 class="text-left font-italic font-weight-bolder mt-4 ml-3"><u>Is School</u></h1>
+		   <ul class="ml-auto mt-5 text-right">
+         <li><a [routerLink]="['/dashboard']" class=" font-weight-bolder mt-5">Home /</a></li>
+        <li><a [routerLink]="['/login']" class="font-weight-bolder mt-5">Logout</a></li>       
+      </ul>
+		</div>
+	</div><hr>
+
+<div class="container">
+	 <div class="row">
+	 	<div class="col-6 ml-5 mt-5">
+	 	   <h3 class="ml-5"><u>Teachers List</u></h3>
+	 	</div>
+	 	 <div class="col-6 text-right ml-auto mr-5">
+           <a [routerLink]="['/teacher']"><button type="button" class="btn btn-primary mr-5 font-weight-bold">Create Teacher</button></a>
+        </div>
+	 </div>
+ 
+   <table class="table table-bordered text-dark text-center mt-3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Education</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+       <tbody>
+         <tr *ngFor="let rows of teacherArr">
+            <td>{{rows.name}}</td>
+            <td>{{rows.age}}</td>
+            <td>{{rows.educationQualification}}</td>
+          <td> <button class="btn btn-primary" routerLink = '/teacher/{{rows.id}}'>Edit</button></td> 
+             <td><button class="btn btn-dark" (click) = "get(rows.id)">Delete</button></td>
+          </tr>
+       </tbody>
+    </table>
+ </div>
+	
+</div>

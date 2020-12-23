@@ -119,6 +119,127 @@
           }
         }
       }
-    }},
-  "defaultProject": "first-app"
+    },
+    "products": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/products",
+      "sourceRoot": "projects/products/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/products",
+            "index": "projects/products/src/index.html",
+            "main": "projects/products/src/main.ts",
+            "polyfills": "projects/products/src/polyfills.ts",
+            "tsConfig": "projects/products/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/products/src/favicon.ico",
+              "projects/products/src/assets"
+            ],
+            "styles": [
+              "projects/products/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/products/src/environments/environment.ts",
+                  "with": "projects/products/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "products:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "products:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "products:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/products/src/test.ts",
+            "polyfills": "projects/products/src/polyfills.ts",
+            "tsConfig": "projects/products/tsconfig.spec.json",
+            "karmaConfig": "projects/products/karma.conf.js",
+            "assets": [
+              "projects/products/src/favicon.ico",
+              "projects/products/src/assets"
+            ],
+            "styles": [
+              "projects/products/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/products/tsconfig.app.json",
+              "projects/products/tsconfig.spec.json",
+              "projects/products/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/products/e2e/protractor.conf.js",
+            "devServerTarget": "products:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "products:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "first-app",
+  "cli": {
+    "analytics": "49256797-f84b-4b6b-99fa-a22077d19668"
+  }
 }

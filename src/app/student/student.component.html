@@ -1,0 +1,93 @@
+ 
+  <div class="container-fluid ">
+    <div class="container">
+      <div class="row logoutrow">
+        <h1 class="text-left font-italic font-weight-bolder mt-4 ml-3"><u>Is School</u></h1>
+        <ul class="ml-auto mt-5 mr-5">
+          <li><a [routerLink]="['/dashboard']" class=" font-weight-bolder mt-5">Home /</a></li>
+          <li><a [routerLink]="['/login']" class="font-weight-bolder mt-5">Logout</a></li>      
+        </ul>
+      </div>
+    </div><hr>
+    <div class="container">
+      <h3 class="text-center"><u>Create Student</u></h3>
+      <div class="row mt-5 ml-3 mr-3">
+        <div class="col-3">
+          <div class="form-group">
+            <label for="rollNo">Roll No</label>
+            <input type="text"  [(ngModel)]="students.rollNo" name="rollNo" placeholder="Roll No" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="fName">First Name</label>
+             <!-- <input type="email" class="form-control" name="email" id="email" ngModel placeholder="Enter email" -->
+                                   <!-- [(ngModel)]="profileData.email" required> -->
+                                
+             <input type="text" [class.is-invalid]="firstName.invalid && firstName.touched" #firstName="ngModel" [(ngModel)]="students.firstName"  name="firstName" placeholder="First Name" class="form-control">
+             <span class="text-danger float-left" [class.d-none]="firstName.valid || firstName.untouched"><i class="fa fa-info-circle"
+              aria-hidden="true"></i>firstName is
+            required</span>
+          </div>
+        </div>
+         <div class="col-3">
+          <div class="form-group">
+             <label for="lname">Last Name</label>
+            <input type="text"  [(ngModel)]="students.lastName" name="lastName" placeholder="Last Name" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="uName">User Name</label>
+            <input type="text"  [(ngModel)]="students.userName" name="userName" placeholder="User Name" class="form-control">
+          </div>
+        </div>
+           <div class="col-3">
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password"  [(ngModel)]="students.password" name="password" placeholder="Password" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="std">Standard</label>
+            <input type="text"  [(ngModel)]="students.standard" name="standard" placeholder="Standard" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="gender">Gender</label>
+            <select class="form-control" [(ngModel)]="students.gender" name="gender"  >
+              <option value="">Choose</option>
+               <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="dob">Date Of Birth</label>
+            <input type="date" [(ngModel)]="students.dateOfBirth" name="dateOfBirth"  placeholder="Date Of Birth" class="form-control">
+          </div>
+        </div>
+           <div class="col-3">
+          <div class="form-group">
+            <label for="faName">Father Name</label>
+            <input type="text"  [(ngModel)]="students.fatherName" name="fatherName" placeholder="Father Name" class="form-control">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+             <label for="pNo">Phone No</label>
+            <input type="number"  [(ngModel)]="students.phoneNo" name="phoneNo" placeholder="Phone No" class="form-control">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-12 text-center">
+        <a [routerLink]="['/student-list']"><button type="button" (click)="submit()" class="btn-lg btn-primary">Submit</button></a>
+      </div>
+  
+    </div>
+ 
+  </div>

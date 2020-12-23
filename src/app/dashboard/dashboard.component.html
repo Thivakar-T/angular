@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+	<div class="container">
+		<div class="row logoutrow">
+			<h1 class="text-left font-italic font-weight-bolder mt-4 ml-3"><u>Is School</u></h1>
+			<ul class="ml-auto mt-5">
+				   <li><a [routerLink]="['/dashboard']" class=" font-weight-bolder mt-5">Home /</a></li>
+                   <li><a [routerLink]="['/login']" class="font-weight-bolder mt-5">Logout</a></li>      
+			</ul>
+		</div>
+	</div><hr>
+	<div class="container">
+		<div class="row text-center mt-5">
+			<div class="col-6">
+		      <img src="../../assets/students.jpg" class="rounded mb-3" width="250" height="250"><br>
+              <a [routerLink]="['/student-list']" class="font-weight-bolder text-dark">Students</a>
+			</div>
+			<div class="col-6">
+		      <img src="../../assets/teachers.jpg" class="rounded mb-3" width="250" height="250"><br>
+              <a [routerLink]="['/teacher-list']" class="font-weight-bolder text-dark">Teachers</a>
+			</div>
+
+		</div>
+
+      			
+	</div>	
+</div>

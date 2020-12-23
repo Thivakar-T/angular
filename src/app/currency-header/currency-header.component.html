@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax First Task</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+  	body{
+  		background-color: lightgray;
+      overflow-x: none;
+  	}
+    span{
+    	color: red;
+    	font-weight: 600;
+    }
+    .currency{
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .navbar{
+      width:100%;
+    }
+    ul li{
+        display: flex;
+    }
+    .footer{
+      margin-top: 300px;
+      height: 50px;
+      width: 100%;
+      font-size: 24px;
+      font-weight: 700;
+      bottom: 0;  
+    }
+    /* .wel{
+      margin-top: 100px !important;
+      font-size:48px;
+      letter-spacing: 2.5px;
+      animation: animate 30s linear infinite;
+      opacity: 0;
+    } */
+    .container-fluid{
+      margin:0;
+      padding: 0;
+    }
+
+    /* @keyframes animate{
+      0%{
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+      2%{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      18%{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      20%{
+        opacity: 1;
+        transform: translateY(50px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(25px);
+      }
+    } */
+
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <a class="navbar-brand" [routerLink]="['/currency']">
+    <img src="../../assets/dol1.jpg" class="mt-3" width="200" height="50">
+  </a>
+  <ul class="navbar-nav ml-auto d-flex">
+    <li class="nav-item active">
+      <a class="nav-link font-weight-bolder currency text-white" [routerLink]="['/currencyList']"><u class="u">Currencies /</u></a>
+      <a class="nav-link font-weight-bolder currency text-white" [routerLink]="['/login']"><u class="u">Logout</u></a>
+    </li>
+  </ul>
+</nav> 
+ 
+ <div class="container">
+   <h1 class="font-weight-bolder text-primary text-center mt-5 wel">Welcome To Currency Management</h1>
+
+ </div>
+<div class="footer bg-dark">
+  <p class="text-center text-white pt-1">Footer</p>
+</div>
+</div>
+
+
+</body>
+</html>
